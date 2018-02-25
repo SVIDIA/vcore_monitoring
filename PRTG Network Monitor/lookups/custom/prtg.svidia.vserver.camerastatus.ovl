@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.svidia.vserver.camerastatus" desiredValue="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+	  <SingleInt state="None" value="0">
+        Camera is disabled
+      </SingleInt>
+      <SingleInt state="Error" value="1">
+        Camera FAULT
+      </SingleInt>
+	  <SingleInt state="Ok" value="2">
+        Camera OK
+      </SingleInt>
+	  <SingleInt state="Ok" value="3">
+        Camera OK (rec)
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

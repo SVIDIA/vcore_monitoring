@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.svidia.vserver.backupstatus" desiredValue="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+	  <SingleInt state="None" value="0">
+        Backup is not used
+      </SingleInt>
+      <SingleInt state="Ok" value="1">
+        Backup is running
+      </SingleInt>
+	  <SingleInt state="Warning" value="2">
+        Backup is stopped
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>
