@@ -23,7 +23,7 @@ use DateTime::TimeZone;
 use JSON;
 #use Data::Dumper;
 
-my $Version=          "8.15.3";
+my $Version=          "8.15.4";
 
 my $o_help=             undef;  # wan't some help ?
 my $o_debug=            0;  # debug
@@ -410,7 +410,7 @@ unless($result && $result->is_fault eq 0) {
 #	print $hr->status_line . "\n";
 		$lerr_msg = $lhttp_r->status_line;
 	}
-	$lerr_msg = sprintf("Could not enumerate %s MI instances\n%s (err=%d response=%d)\n" , $PEER_TYPE, $lerr_msg, $client->last_error, $client->response_code);
+	$lerr_msg = sprintf("Could not enumerate %s MI instances. %s (err=%d response=%d)" , $PEER_TYPE, $lerr_msg, $client->last_error, $client->response_code);
     	my_err_exit $NAGIOS_ERR, $lerr_msg;
 }
 
@@ -468,7 +468,7 @@ foreach(@list) {
 		$comm_err_msg = sprintf("%s: %d", $comm_err_msg, $ret_res);
 	}
 	if ($route{$noun_ReturnMessage}) {
-		$comm_err_msg = sprintf("%s\n%s", $comm_err_msg, $route{$noun_ReturnMessage});
+		$comm_err_msg = sprintf("%s: %s", $comm_err_msg, $route{$noun_ReturnMessage});
 	}
 	my_err_exit $NAGIOS_CRIT, $comm_err_msg;
  } 
@@ -522,7 +522,7 @@ foreach(@list) {
 	if ($nowdst) {
 	    	$today = $today->add(minutes => 60);
 	}
-#	printf("remote offset=%d min, is_dst=%s\n",$route{$noun_CSTimeBias},$nowdst);
+#	printf("remote offset=%d min, is_dst=%s	\n",$route{$noun_CSTimeBias},$nowdst);
     }
     my $till = DateTime::Format::DateParse->parse_datetime($route{$noun_ArchiveMostRecentDate});
     my $dur = $today->subtract_datetime_absolute($till);
